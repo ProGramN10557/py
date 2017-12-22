@@ -1,0 +1,10 @@
+# logistic
+from sklearn.cross_validation import train_test_split 
+X_train, X_test, y_train, y_test = train_test_split(X, y)
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+reg = LogisticRegression(fit_intercept = False)
+logmodel = reg.fit(X_train, y_train) 
+y_predlog = logmodel.predict(X_test)
+acclog = accuracy_score(y_predlog, y_test)
+print (acclog) 
